@@ -1,32 +1,58 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-content>
+      <router-view/>
+    </v-content>
+  </v-app>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  name: 'App',
+  data: () => ({
+    //
+  }),
+});
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-nav {
-  padding: 30px;
-}
+  html {
+    font-size: 62.5%;
+  }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  /******** 1060px ********/
+  @media only screen and (max-width: 66.25em) {
+    html {
+      font-size: 59.37%;
+    }
+  }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  /******** 700px ********/
+  @media only screen and (max-width: 45.625em) {
+    html {
+      font-size: 52%;
+    }
+  }
+
+  /******** 500px ********/
+  @media only screen and (max-width: 31.25em) {
+    html {
+      font-size: 43.75%;
+    }
+  }
+
+  /******** 350px ********/
+  @media only screen and (max-width: 21.875em) {
+    html {
+      font-size: 40%;
+    }
+  }
 </style>
